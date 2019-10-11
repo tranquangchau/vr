@@ -18,5 +18,20 @@ var Base64DecodeUrl = function(str) {
 //     }
 // }
 
-    	var imageUri = 'https://i.imgur.com/05HFm8O.jpg';
+if (!image) {
+    //alert('Please reoperate again.');
+	var imageUri = 'https://i.imgur.com/plbmTtU.jpg';
+	document.querySelector('#sky').setAttribute('src', imageUri);
+} else {
+    if (image.indexOf('base64') == -1) {
+    	//var imageUri = baseUrl + image + '.jpg';
+    	var imageUri = "https://i.imgur.com/" + image + '.jpg';
         document.querySelector('#sky').setAttribute('src', imageUri);
+		
+    } else {
+        document.querySelector('#sky').setAttribute('src', Base64DecodeUrl(image));
+    }
+}
+
+    	//var imageUri = 'https://i.imgur.com/05HFm8O.jpg';
+        //document.querySelector('#sky').setAttribute('src', imageUri);
